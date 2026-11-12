@@ -30,9 +30,17 @@ them. The same recipe is in this repository:
   and build answers it applies.
 - `linux-addon/` — the Gradle module that packs the three files into the APK (`hasCode="false"`).
 
-To rebuild: install the Android NDK, run `bash recipe/build-proot.sh` (output in `recipe/out/`), then build `linux-addon` with
-`recipe/out/jniLibs` as its `jniLibs` folder. An add-on you build and sign yourself works with a PocketIDE build signed with
-the same key.
+To rebuild (Android SDK and NDK, JDK 17):
+
+```sh
+bash recipe/build-proot.sh                     # PRoot, its loader and talloc into recipe/out/
+./gradlew :linux-addon:assembleDebug -PaddonKeystore=my.keystore \
+    -PaddonKeyAlias=me -PaddonStorePassword=... -PaddonKeyPassword=...
+```
+
+Without `-PaddonKeystore` the APK is signed with Android's usual debug key. The official add-on is signed with PocketIDE's own
+key, which is not in this repository, and PocketIDE uses an add-on only when it is signed like PocketIDE itself, so an add-on
+you build works with a PocketIDE build signed with the same key as yours.
 
 ## Licences
 

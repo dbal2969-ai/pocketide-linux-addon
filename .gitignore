@@ -1,0 +1,7 @@
+build/
+.gradle/
+local.properties
+recipe/out/
+recipe/work/
+*.keystore
+*.jks

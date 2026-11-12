@@ -1,0 +1,4 @@
+// Same Android Gradle plugin as PocketIDE.
+plugins {
+    id("com.android.application") version "8.13.2" apply false
+}
