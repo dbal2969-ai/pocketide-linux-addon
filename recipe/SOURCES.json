@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "deviceAbi": "arm64-v8a",
+  "androidApi": 26,
+  "proot": {
+    "source": "https://github.com/termux/proot",
+    "tag": "v5.1.107.96",
+    "revision": "a179d3e8a4e045aaa1fb8cc3284f23509d96d353",
+    "license": "GPL-2.0-or-later"
+  },
+  "talloc": {
+    "source": "https://www.samba.org/ftp/talloc/talloc-2.5.0.tar.gz",
+    "sha256": "912afa237510ae542a7733998eb18a12bcda35ab6729c8e2ddb43e8d0ebab007",
+    "license": "LGPL-3.0-or-later",
+    "linkage": "shared libtalloc.so"
+  },
+  "termux-terminal": {
+    "source": "https://github.com/termux/termux-app",
+    "tag": "v0.118.3",
+    "revision": "5b657c6adf4304e5198951ce815fe0205dcac29c",
+    "modules": ["terminal-emulator", "terminal-view"],
+    "license": "GPL-3.0-only (Apache-2.0 for code inherited from Android Terminal Emulator)",
+    "vendoredAt": "terminal-emulator/, terminal-view/"
+  },
+  "alpine-rootfs": {
+    "source": "https://dl-cdn.alpinelinux.org/alpine/v3.24/releases/aarch64/alpine-minirootfs-3.24.2-aarch64.tar.gz",
+    "sha256": "9bf70a7f18ea44094cbb5f70c58f9af129c8214745743db0e68e5502cc2ce773",
+    "bundled": false,
+    "note": "Downloaded on the phone when the user installs the Linux environment."
+  },
+  "patches": ["proot-build.mk", "talloc-cross-answers.txt", "proot-loader-info.awk", "proot-termination.patch", "proot-git-version.sh"]
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The PocketIDE Linux add-on: no code, no screens; only PRoot, its loader and talloc in lib/ (1.5.128). -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <application
+        android:allowBackup="false"
+        android:extractNativeLibs="true"
+        android:hasCode="false"
+        android:label="PocketIDE Linux add-on" />
+</manifest>

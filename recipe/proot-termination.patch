@@ -1,0 +1,4 @@
+--- a/event.c
++++ b/event.c
+@@ -330,0 +331 @@
++		case SIGTERM:
